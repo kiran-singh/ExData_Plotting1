@@ -11,6 +11,7 @@ if(!file.exists(fileName)){
 }
 
 # Use SQL to extract only the required subset from the downloaded text file.
-finalData <- read.csv.sql(file = fileName, sql = "select * from file where Date in ('1/2/2007','2/2/2007')", header = T, sep = ";")
+# read.csv2.sql defaults header to TRUE and sep to ";"
+finalData <- read.csv2.sql(file = fileName, sql = "select * from file where Date in ('1/2/2007','2/2/2007')")
 
 closeAllConnections() # close connection
